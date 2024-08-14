@@ -19,7 +19,9 @@ response = requests.get(url, headers=headers)
 
 st.title("Figgy Putting")
 st.write("Get Figma data using the API.")
+st.write("""<figure><embed type="image/svg+xml" src="figma.svg" /></figure>""", unsafe_allow_html=True)
 st.text_input("Figma File ID", file_key, placeholder=file_key)
+
 
 # Check if the request was successful
 if response.status_code == 200:
