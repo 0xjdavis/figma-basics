@@ -43,11 +43,11 @@ if response.status_code == 200:
         if thumbnail_url:
             st.image(thumbnail_url, width=300)
             thumbnail_url = figma_data.get('thumbnailUrl', '')  # Adjust this path as needed
-            st.write(name + " - " + lastModified)
+            st.subheader(name + " - " + lastModified)
             st.write("Version: " + version)
             st.write("Role: " + role)
-            st.write("Editor Type: " + editor)
-            st.write("Link Access: " + access)
+            st.write("Editor Type: " + editorType)
+            st.write("Link Access: " + linkAccess)
         else:
             st.warning('Thumbnail URL not found in the Figma data.')
         
