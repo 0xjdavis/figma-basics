@@ -5,7 +5,7 @@ import requests
 access_token = st.secrets["FIGMA_API_KEY"]
 
 # The file key from the Figma file URL
-file_key = 'pagv93kJSWZUwhmr6BIyVG' # your_file_key_here
+file_key = 'pagv93kJSWZUwhmr6BIyVG'  # Replace with your Figma file key
 
 # Figma API endpoint for getting file data
 url = f'https://api.figma.com/v1/files/{file_key}'
@@ -25,13 +25,23 @@ if response.status_code == 200:
     figma_data = response.json()
     
     # Example extraction of the thumbnail URL from the JSON data
-    # You need to adjust the key paths based on the actual structure of your JSON
+    # Please adjust this path based on your actual JSON structure
     try:
-        thumbnail_url = figma_data['document']['children'][0]['children'][0]['thumbnailUrl']  # Modify this path as needed
-        st.image(thumbnail_url, width=300)  # Display the thumbnail image
-    except KeyError:
-        st.warning('Thumbnail URL not found in the Figma data.')
+        # Assuming that 'thumbnailUrl' is a key present at the top level for simplicity
+        # The actual key path may vary based on your Figma file structure
+        thumbnail_url = figma_data.get('thumbnailUrl', '')  # Adjust this path as needed
 
-    st.write(figma_data)
+        # Display the thumbnail image if URL is found
+        if thumbnail_url:
+            st.image(thumbnail_url, width=300)
+        else:
+            st.warning('Thumbnail URL not found in the Figma data.')
+        
+        # Display other Figma data
+        st.write(figma_data)
+
+    except KeyError as e:
+        st.warning(f'Error in accessing thumbnail URL: {e}')
+
 else:
-    st.warning('Failed to retrieve the file:', response.status_code)
+    st.warning(f'Failed to retrieve the file. Status code: {response.status_code}')
