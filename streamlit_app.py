@@ -9,6 +9,7 @@ file_key = 'pagv93kJSWZUwhmr6BIyVG'  # Replace with your Figma file key
 
 # Figma API endpoint for getting file data
 url = f'https://api.figma.com/v1/files/{file_key}'
+file_url = f'https://www.figma.com/design/{file_key}'
 
 headers = {
     'X-Figma-Token': access_token
@@ -43,13 +44,14 @@ if response.status_code == 200:
         if thumbnail_url:
             st.image(thumbnail_url, width=300)
             thumbnail_url = figma_data.get('thumbnailUrl', '')  # Adjust this path as needed
+            
             st.subheader(name)
             st.write("Last Modified: " + lastModified)
             st.write("Version: " + version)
             st.write("Role: " + role)
             st.write("Editor Type: " + editorType)
             st.write("Link Access: " + linkAccess)
-            st.markdown('<a href="' + url + '" target="_blank">View File</a>', unsafe_allow_html=True)
+            st.markdown('<a href="' + fileUrl + '" target="_blank"><button>View File</button></a>', unsafe_allow_html=True)
         else:
             st.warning('Thumbnail URL not found in the Figma data.')
         
