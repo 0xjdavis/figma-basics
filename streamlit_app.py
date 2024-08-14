@@ -35,8 +35,8 @@ if response.status_code == 200:
         lastModified = figma_data.get('lastModified', '')
         version = figma_data.get('version', '')
         role = figma_data.get('role', '')
-        editor = figma_data.get('editor', '')
-        access = figma_data.get('access', '')
+        editorType = figma_data.get('editorType', '')
+        linkAccess = figma_data.get('linkAccess', '')
 
         
         # Display the thumbnail image if URL is found
@@ -46,8 +46,8 @@ if response.status_code == 200:
             st.write(name + " - " + lastModified)
             st.write("Version: " + version)
             st.write("Role: " + role)
-            st.write("Editor: " + editor)
-            st.write("Access: " + access)
+            st.write("Editor Type: " + editor)
+            st.write("Link Access: " + access)
         else:
             st.warning('Thumbnail URL not found in the Figma data.')
         
