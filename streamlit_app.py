@@ -54,7 +54,7 @@ if response.status_code == 200:
             st.write("Link Access: " + linkAccess)
             
             # st.write("""<p>Live View</p><figure><embed type="image/svg+xml" src="./figma.svg" /></figure>""", unsafe_allow_html=True)
-            st.markdown('<a href="' + file_url + '" target="_blank"><button style="background-color:#000;color:#fff;border-radius:3px;"><img src="https://static.figma.com/app/icon/1/favicon.svg" height="16" />Open File in Figma</button></a>', unsafe_allow_html=True)
+            st.markdown('<a href="' + file_url + '" target="_blank"><button style="background-color:#000;color:#fff;border-radius:3px;"><img src="https://static.figma.com/app/icon/1/favicon.svg" height="14" /> Open File in Figma</button></a>', unsafe_allow_html=True)
         else:
             st.warning('Thumbnail URL not found in the Figma data.')
         
