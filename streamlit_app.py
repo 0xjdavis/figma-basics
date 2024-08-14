@@ -43,6 +43,7 @@ if response.status_code == 200:
         if thumbnail_url:
             st.image(thumbnail_url, width=300)
             thumbnail_url = figma_data.get('thumbnailUrl', '')  # Adjust this path as needed
+            st.write(name + " " + lastModifed) 
         else:
             st.warning('Thumbnail URL not found in the Figma data.')
         
