@@ -49,7 +49,7 @@ if response.status_code == 200:
             st.write("Role: " + role)
             st.write("Editor Type: " + editorType)
             st.write("Link Access: " + linkAccess)
-            st.markdown('<a href="' + url + '" target="_blank">View File</>', unsafe_allow_html=True, *, help=None)
+            st.markdown('<a href="' + url + '" target="_blank">View File</>', unsafe_allow_html=True)
         else:
             st.warning('Thumbnail URL not found in the Figma data.')
         
