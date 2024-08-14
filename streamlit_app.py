@@ -17,7 +17,7 @@ headers = {
 
 response = requests.get(url, headers=headers)
 
-st.Page(title="Figma basics", icon="https://static.figma.com/app/icon/1/favicon.ico")
+st.Page(title="Figma basics", icon="https://static.figma.com/app/icon/1/touch-120.png")
 st.title("Figma basics")
 st.write("Get Figma data using the API.")
 st.text_input("Figma File ID", file_key, placeholder=file_key)
