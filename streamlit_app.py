@@ -32,7 +32,7 @@ if response.status_code == 200:
         thumbnail_url = figma_data.get('thumbnailUrl', '')  # Adjust this path as needed
         # and...    
         name = figma_data.get('name', '')
-        lastModified = figma_data.get('lastmodified', '')
+        lastModified = figma_data.get('lastModified', '')
         version = figma_data.get('version', '')
         role = figma_data.get('role', '')
         editor = figma_data.get('editor', '')
