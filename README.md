@@ -1,8 +1,8 @@
-# 🎈 Figgy Putting
+# 🎈 Figma Basics
 
 Upload Figma files for parsing...
 
-[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://figgy-putting.streamlit.app/)
+[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://figma-basics.streamlit.app/)
 
 ### How to run it on your own machine
 
