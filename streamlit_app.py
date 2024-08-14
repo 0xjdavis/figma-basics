@@ -30,10 +30,19 @@ if response.status_code == 200:
         # Assuming that 'thumbnailUrl' is a key present at the top level for simplicity
         # The actual key path may vary based on your Figma file structure
         thumbnail_url = figma_data.get('thumbnailUrl', '')  # Adjust this path as needed
+        # and...    
+        name = figma_data.get('name', '')
+        lastModified = figma_data.get('lastmodified', '')
+        version = figma_data.get('version', '')
+        role = figma_data.get('role', '')
+        editor = figma_data.get('editor', '')
+        access = figma_data.get('access', '')
 
+        
         # Display the thumbnail image if URL is found
         if thumbnail_url:
             st.image(thumbnail_url, width=300)
+            thumbnail_url = figma_data.get('thumbnailUrl', '')  # Adjust this path as needed
         else:
             st.warning('Thumbnail URL not found in the Figma data.')
         
