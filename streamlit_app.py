@@ -17,9 +17,8 @@ headers = {
 
 response = requests.get(url, headers=headers)
 
-st.title("Figgy Putting")
+st.title("Figgy Putting", "https://static.figma.com/app/icon/1/favicon.ico")
 st.write("Get Figma data using the API.")
-st.write("""<figure><embed type="image/svg+xml" src="./figma.svg" /></figure>""", unsafe_allow_html=True)
 st.text_input("Figma File ID", file_key, placeholder=file_key)
 
 
@@ -53,7 +52,9 @@ if response.status_code == 200:
             st.write("Role: " + role)
             st.write("Editor Type: " + editorType)
             st.write("Link Access: " + linkAccess)
-            st.markdown('<a href="' + file_url + '" target="_blank"><button style="background-color:#000;color:#fff;border-radius:3px;">Open File in Figma</button></a>', unsafe_allow_html=True)
+            
+            # st.write("""<p>Live View</p><figure><embed type="image/svg+xml" src="./figma.svg" /></figure>""", unsafe_allow_html=True)
+            st.markdown('<a href="' + file_url + '" target="_blank"><button style="background-color:#000;color:#fff;border-radius:3px;"><img src="https://static.figma.com/app/icon/1/favicon.svg" height="16" />Open File in Figma</button></a>', unsafe_allow_html=True)
         else:
             st.warning('Thumbnail URL not found in the Figma data.')
         
