@@ -17,7 +17,20 @@ headers = {
 
 response = requests.get(url, headers=headers)
 
-# st.Page(title="Figma basics", icon="✨")
+
+# Setting page layout
+st.set_page_config(
+    page_title="Figma basics",
+    page_icon="✨",
+    layout="wide",
+    initial_sidebar_state="expanded"
+)
+
+# Sidebar header
+st.sidebar.header("Created by:")
+st.sidebar.markdown('<a href="https://ai.jdavis.xyz" target="_blank">J. Davis</a>')
+
+# Main Page
 st.title("Figma basics")
 st.write("Get Figma data using the API.")
 st.text_input("Figma File ID", file_key, placeholder=file_key)
