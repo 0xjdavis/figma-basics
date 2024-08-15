@@ -28,7 +28,7 @@ st.set_page_config(
 
 # Sidebar header
 st.sidebar.header("Created by:")
-st.sidebar.markdown('<a href="https://ai.jdavis.xyz" target="_blank">J. Davis</a>')
+st.sidebar.markdown('<a href="https://ai.jdavis.xyz" target="_blank">J. Davis</a>', unsafe_allow_html=True)
 
 # Main Page
 st.title("Figma basics")
