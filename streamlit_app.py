@@ -26,15 +26,31 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# Sidebar header
-st.sidebar.header("Created by:")
-st.sidebar.markdown('<a href="https://ai.jdavis.xyz" target="_blank">J. Davis</a>', unsafe_allow_html=True)
+# Sidebar for API Key and User Info
+st.sidebar.header("About App")
+st.sidebar.write("This is an app that retreives data from files using the Figma API created by <a href="https://ai.jdavis.xyz" target="_blank">0xjdavis</a>.")
+
+# Calendly
+st.sidebar.markdown("""
+    <hr />
+    <center>
+    <div style="border-radius:8px;padding:8px;background:#fff";width:100%;">
+    <img src="https://avatars.githubusercontent.com/u/98430977" alt="Oxjdavis" height="100" width="100" border="0" style="border-radius:50%"/>
+    <br />
+    <span style="height:12px;width:12px;background-color:#77e0b5;border-radius:50%;display:inline-block;"></span> <b>I'm available for new projects!</b><br />
+    <a href="https://calendly.com/0xjdavis" target="_blank"><button style="background:#126ff3;color:#fff;border: 1px #126ff3 solid;border-radius:8px;padding:8px 16px;margin:10px 0">Schedule a call</button></a><br />
+    </div>
+    </center>
+    <br />
+""", unsafe_allow_html=True)
+
+# Copyright
+st.sidebar.caption("©️ Copyright 2024 J. Davis")
 
 # Main Page
 st.title("Figma basics")
 st.write("Get Figma data using the API.")
 st.text_input("Figma File ID", file_key, placeholder=file_key)
-
 
 # Check if the request was successful
 if response.status_code == 200:
@@ -45,7 +61,7 @@ if response.status_code == 200:
     try:
         # Assuming that 'thumbnailUrl' is a key present at the top level for simplicity
         # The actual key path may vary based on your Figma file structure
-        thumbnail_url = figma_data.get('thumbnailUrl', '')  # Adjust this path as needed
+        thumbnail_url = figma_data.get('thumbnailUrl', '')
         # and...    
         name = figma_data.get('name', '')
         lastModified = figma_data.get('lastModified', '')
@@ -54,11 +70,10 @@ if response.status_code == 200:
         editorType = figma_data.get('editorType', '')
         linkAccess = figma_data.get('linkAccess', '')
 
-        
         # Display the thumbnail image if URL is found
         if thumbnail_url:
             st.image(thumbnail_url, width=300)
-            thumbnail_url = figma_data.get('thumbnailUrl', '')  # Adjust this path as needed
+            thumbnail_url = figma_data.get('thumbnailUrl', '')
             
             st.subheader(name)
             st.write("Last Modified: " + lastModified)
