@@ -28,9 +28,7 @@ st.set_page_config(
 
 # Sidebar for API Key and User Info
 st.sidebar.header("About App")
-st.sidebar.markdown("""
-    This is an app that retreives data from files using the Figma API created by <a href="https://ai.jdavis.xyz" target="_blank">0xjdavis</a>
-""")
+st.sidebar.markdown('This is an app that retreives data from files using the Figma API created by <a href="https://ai.jdavis.xyz" target="_blank">0xjdavis</a>')
 
 # Calendly
 st.sidebar.markdown("""
