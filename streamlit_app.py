@@ -17,12 +17,11 @@ headers = {
 
 response = requests.get(url, headers=headers)
 
-
 # Setting page layout
 st.set_page_config(
     page_title="Figma basics",
     page_icon="✨",
-    layout="wide",
+    layout="centered",
     initial_sidebar_state="expanded"
 )
 
